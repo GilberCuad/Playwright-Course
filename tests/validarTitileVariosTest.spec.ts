@@ -24,6 +24,8 @@ test.describe('Navegaciòn de www.freerangetesters.com', () => {
 
       // este es n test de prueba
 
+      // este es otro test
+
     })
 
   }
