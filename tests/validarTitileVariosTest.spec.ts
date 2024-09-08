@@ -22,6 +22,8 @@ test.describe('Navegaciòn de www.freerangetesters.com', () => {
         await page.waitForURL(`**${seccion.url}`)
       });
 
+      // este es n test de prueba
+
     })
 
   }
