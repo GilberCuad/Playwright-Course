@@ -5,9 +5,11 @@ test.describe('Navegaciòn de www.freerangetesters.com', () => {
   // añadimos los tittles esperados
 
   const secciones = [
-    { nombre: 'Cursos', url: '/cursos', titulEsperado: 'Cursos' },
+    { nombre: 'Cursos', url: '/cursos', tituloEsperado: 'Cursos' },
     { nombre: "Udemy", url: '/udemy', tituloEsperado: 'Udemy' },
     { nombre: "Recursos", url: '/recursos', tituloEsperado: 'Recursos' },
+    { nombre: "Blog", url: '/blog', tituloEsperado: 'Free Range Testers' },
+
   ];
   for (const seccion of secciones) {
     test(`validar la redireccion a la seccion "${seccion.nombre}"`, async ({ page }) => {
@@ -22,11 +24,10 @@ test.describe('Navegaciòn de www.freerangetesters.com', () => {
         await page.waitForURL(`**${seccion.url}`)
       });
 
-      // este es n test de prueba
+      await test.step(`Me lleva a la seccion de titulo "${seccion.tituloEsperado}"`, async () => {
+        await expect(page).toHaveTitle(seccion.tituloEsperado);
+      })
 
-      // este es otro test
-
-      // otro test de prueba
 
 
     })
